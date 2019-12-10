@@ -62,3 +62,7 @@ Route::prefix('blog')->name('blog')->group(function () {
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
 })->name('contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
