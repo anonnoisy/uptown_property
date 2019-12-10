@@ -27,9 +27,14 @@ Route::get('/services', function () {
     return view('frontend.pages.services.index');
 })->name('services.index');
 
-Route::get('/properties', function () {
-    return view('frontend.pages.properties.index');
-})->name('properties.index');
+Route::prefix('properties')->name('properties')->group(function () {
+    Route::get('/', function () {
+        return view('frontend.pages.properties.index');
+    })->name('.index');
+    Route::get('/property/show', function () {
+        return view('frontend.pages.properties.show');
+    })->name('.show');
+});
 
 Route::get('/blog', function () {
     return view('frontend.pages.blogs.index');
