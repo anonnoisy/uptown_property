@@ -36,9 +36,14 @@ Route::prefix('properties')->name('properties')->group(function () {
     })->name('.show');
 });
 
-Route::get('/blog', function () {
-    return view('frontend.pages.blogs.index');
-})->name('blog.index');
+Route::prefix('blog')->name('blog')->group(function () {
+    Route::get('/', function () {
+        return view('frontend.pages.blogs.index');
+    })->name('.index');
+    Route::get('/show', function () {
+        return view('frontend.pages.blogs.show');
+    })->name('.show');
+});
 
 Route::get('/contact', function () {
     return view('frontend.pages.contact');
