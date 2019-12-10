@@ -19,9 +19,14 @@ Route::get('/about', function () {
     return view('frontend.pages.about');
 })->name('about');
 
-Route::get('/agent', function () {
-    return view('frontend.pages.agents.index');
-})->name('agent.index');
+Route::prefix('agent')->name('agent')->group(function () {
+    Route::get('/', function () {
+        return view('frontend.pages.agents.index');
+    })->name('.index');
+    Route::get('/show', function () {
+        return view('frontend.pages.agents.show');
+    })->name('.show');
+});
 
 Route::get('/services', function () {
     return view('frontend.pages.services.index');

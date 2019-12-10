@@ -22,7 +22,7 @@
             <img src="{{ asset('frontend/images/team-1.jpg') }}" class="img-fluid" alt="Colorlib Template">
           </div>
           <div class="desc">
-            <h3><a href="properties.html">James Stallon</a></h3>
+            <h3><a href="{{ route('agent.show') }}">James Stallon</a></h3>
             <p class="h-info"><span class="location">Listing</span> <span class="details">&mdash; 10 Properties</span></p>
           </div>
         </div>
