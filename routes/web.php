@@ -11,6 +11,15 @@
 |
 */
 
+// Route for backend
+Route::prefix('admin')->name('admin')->group(function () {
+    Route::get('/', function () {
+        return view('backend.pages.dashboard.index');
+    })->name('.index');
+});
+// End Route for bacakend
+
+// Route for frontend
 Route::get('/', function () {
     return view('frontend.pages.index');
 })->name('index');
